@@ -531,7 +531,12 @@ class _ComprasAdminListViewState extends State<ComprasAdminListView> {
           quantidade = int.parse(quant);
           if(quantidade > estoque){
             toast(context, "Quantidade máx $estoque");
-          }else{
+          }
+          if(quantidade ==0){
+            toast(context, "quantidade precisa ser maior que 0");
+          }
+
+          else{
             _onClickSalvar(context, c, bloc);
             setState(() {
               widget.listEstoque.removeWhere((element) => element.id == c.id);

@@ -1,6 +1,6 @@
-import 'package:badges/badges.dart';
+
 import 'package:bloc_pattern/bloc_pattern.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:merenda_escolar/app_model.dart';
 import 'package:merenda_escolar/core/bloc/af_bloc.dart';
 import 'package:merenda_escolar/core/bloc/pedido_bloc.dart';
@@ -12,6 +12,7 @@ import 'package:merenda_escolar/pages/usuarios/meus_dados_page.dart';
 import 'package:merenda_escolar/utils/bloc/bloc.dart';
 import 'package:merenda_escolar/utils/bloc/bloc_af.dart';
 import 'package:provider/provider.dart';
+import 'package:badges/badges.dart' as badges;
 
 class Header extends StatefulWidget {
   @override
@@ -132,10 +133,17 @@ class _HeaderState extends State<Header> {
         ? InkWell(
             child: Padding(
               padding: const EdgeInsets.only(top: 10),
-              child: Badge(
-                position: BadgePosition.topEnd(top: -6, end: 0),
-                animationDuration: Duration(milliseconds: 300),
-                animationType: BadgeAnimationType.slide,
+              child: badges.Badge(
+                position: badges.BadgePosition.topEnd(top: -6, end: 0),
+                badgeAnimation: badges.BadgeAnimation.rotation(
+                  animationDuration: Duration(seconds: 1),
+                  colorChangeAnimationDuration: Duration(milliseconds: 300),
+                  loopAnimation: false,
+                  curve: Curves.fastOutSlowIn,
+                  colorChangeAnimationCurve: Curves.easeInCubic,
+                ),
+
+
                 badgeContent: Text(kx, style: TextStyle(color: Colors.white)),
                 child: Icon(Icons.shopping_cart,size: 30,),
               ),
@@ -154,10 +162,15 @@ class _HeaderState extends State<Header> {
         ? InkWell(
       child: Padding(
         padding: const EdgeInsets.only(top: 10),
-        child: Badge(
-          position: BadgePosition.topEnd(top: -6, end: 0),
-          animationDuration: Duration(milliseconds: 300),
-          animationType: BadgeAnimationType.slide,
+        child: badges.Badge(
+          position: badges.BadgePosition.topEnd(top: -6, end: 0),
+          badgeAnimation: badges.BadgeAnimation.rotation(
+            animationDuration: Duration(seconds: 1),
+            colorChangeAnimationDuration: Duration(milliseconds: 300),
+            loopAnimation: false,
+            curve: Curves.fastOutSlowIn,
+            colorChangeAnimationCurve: Curves.easeInCubic,
+          ),
           badgeContent: Text(kx, style: TextStyle(color: Colors.white)),
           child: Icon(Icons.notifications_on_rounded,size: 30,),
         ),
@@ -176,10 +189,15 @@ class _HeaderState extends State<Header> {
         ? InkWell(
       child: Padding(
         padding: const EdgeInsets.only(top: 10),
-        child: Badge(
-          position: BadgePosition.topEnd(top: -6, end: 0),
-          animationDuration: Duration(milliseconds: 300),
-          animationType: BadgeAnimationType.slide,
+        child: badges.Badge(
+          position: badges.BadgePosition.topEnd(top: -6, end: 0),
+          badgeAnimation: badges.BadgeAnimation.rotation(
+            animationDuration: Duration(seconds: 1),
+            colorChangeAnimationDuration: Duration(milliseconds: 300),
+            loopAnimation: false,
+            curve: Curves.fastOutSlowIn,
+            colorChangeAnimationCurve: Curves.easeInCubic,
+          ),
           badgeContent: Text(kx, style: TextStyle(color: Colors.white)),
           child: Icon(Icons.check_circle,size: 30,),
         ),
@@ -198,10 +216,15 @@ class _HeaderState extends State<Header> {
         ? InkWell(
       child: Padding(
         padding: const EdgeInsets.only(top: 10),
-        child: Badge(
-          position: BadgePosition.topEnd(top: -6, end: 0),
-          animationDuration: Duration(milliseconds: 300),
-          animationType: BadgeAnimationType.slide,
+        child: badges.Badge(
+          position: badges.BadgePosition.topEnd(top: -6, end: 0),
+          badgeAnimation: badges.BadgeAnimation.rotation(
+            animationDuration: Duration(seconds: 1),
+            colorChangeAnimationDuration: Duration(milliseconds: 300),
+            loopAnimation: false,
+            curve: Curves.fastOutSlowIn,
+            colorChangeAnimationCurve: Curves.easeInCubic,
+          ),
           badgeContent: Text(kx, style: TextStyle(color: Colors.white)),
           child: Icon(Icons.bookmark,size: 30,),
         ),

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:appbar_textfield/appbar_textfield.dart';
+
 import 'package:flutter/material.dart';
 import 'package:faker/faker.dart';
 import 'package:merenda_escolar/pages/fornecedor/Fornecedor.dart';
@@ -41,12 +41,12 @@ class _SimpleSearchState extends State<SimpleSearch> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBarTextField(
+       /* appBar: AppBarTextField(
           title: Text("Contacts"),
           onBackPressed: _onRestoreAllData,
           onClearPressed: _onRestoreAllData,
           onChanged: _onSimpleSearch2Changed,
-        ),
+        ),*/
         body: _buildBody());
   }
 

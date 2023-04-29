@@ -71,7 +71,8 @@ class _CardapioPageState extends State<CardapioPage> {
     }
     if (bloc.lista.length == 0 && _isLoading) {
       return Center(child: CircularProgressIndicator());
-    } else if(bloc.lista.length == 0 && !_isLoading ){
+    } else if(bloc.lista.length == 0 && !_isLoading )
+    {
     return Scaffold(
       key: _scaffoldKey,
       body: BreadCrumb(

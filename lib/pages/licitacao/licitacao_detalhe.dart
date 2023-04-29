@@ -737,7 +737,7 @@ class _LicitacaoDetalheState extends State<LicitacaoDetalhe> {
               padding: const EdgeInsets.all(10),
               child: DropdownSearch<String>(
                   mode: Mode.MENU,
-                  showSelectedItem: true,
+                  //showSelectedItem: true,
                   items: mapEscola.keys.toList(),
                   label: "Escola",
                   onChanged: (String data) {

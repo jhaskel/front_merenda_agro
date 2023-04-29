@@ -101,7 +101,7 @@ class _EnviarArquivoState extends State<EnviarArquivo> {
                             child: Column(
                               children: [
                                 Text(msg),
-                                FlatButton(onPressed: () async {
+                                MaterialButton(onPressed: () async {
                                  await _onClickSalvar();
                                   pop(context);
 

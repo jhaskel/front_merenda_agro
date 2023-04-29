@@ -74,6 +74,8 @@ class Utils{
      Colors.lime,
      Colors.grey,
      Colors.greenAccent,
+     Colors.amber,
+     Colors.black54
    ];
  }
  class CorContainer {

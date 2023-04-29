@@ -51,7 +51,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
         .then((value) {
       setState(() {
         _isLoading = false;
-        print("UUUUU $value");
+        print("haskel $value");
 
       });
     });
@@ -124,6 +124,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
 
   @override
   Widget build(BuildContext context) {
+    print("haskel ");
 
     final blocPage = Provider.of<PageBloc>(context);
     print("PAGE ${blocPage.page}");
@@ -211,6 +212,7 @@ class _PrincipalListViewState extends State<PrincipalListView> {
 
   @override
   Widget build(BuildContext context) {
+    print("Homer");
     final blocEscola = Provider.of<EscolaBloc>(context);
     var nnomeEscola=blocEscola.lista.where((e) => e.id==widget.user.escola).toList();
     nomeEscola=nnomeEscola.first.alias;
@@ -598,7 +600,13 @@ class _PrincipalListViewState extends State<PrincipalListView> {
           quantidade = int.parse(quant);
           if(quantidade > estoque){
             toast(context, "Quantidade máx $estoque");
-          }else{
+          }
+
+          if(quantidade ==0){
+            toast(context, "quantidade precisa ser maior que 0");
+          }
+
+          else{
             _onClickSalvar(context, c, bloc);
             setState(() {
               widget.listEstoque.removeWhere((element) => element.id == c.id);

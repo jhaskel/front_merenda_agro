@@ -41,7 +41,8 @@ import 'package:merenda_escolar/utils/pdf/af_pdf_escola_or.dart';
 import 'package:merenda_escolar/utils/pdf/oficio_pdf.dart';
 import 'package:merenda_escolar/utils/utils.dart';
 import 'package:merenda_escolar/web/breadcrumb.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+
+
 import 'package:provider/provider.dart';
 import 'package:supercharged/supercharged.dart';
 import 'package:intl/intl.dart';
@@ -67,7 +68,7 @@ class _AfDetalheState extends State<AfDetalhe> {
 
   final numeroAf = TextEditingController();
   var formatador = NumberFormat("#,##0.00", "pt_BR");
-  TextEditingController dateCtl = TextEditingController();
+
   TextEditingController diaa = TextEditingController();
   var datax;
   bool loading = false;
@@ -967,14 +968,14 @@ print("ise $ise");
     if (widget.af.despesa != null) {
       despe = widget.af.despesa;
     }
-    Widget cancelaButton = FlatButton(
+    Widget cancelaButton = MaterialButton(
       child: Text("Cancelar"),
       onPressed: () {
 
         pop(context);
       },
     );
-    Widget okButton = FlatButton(
+    Widget okButton = MaterialButton(
       child: Text("Ok"),
       onPressed: () {
     //    _alteraStatus(context, true, forne,numeroAf.text);
@@ -1041,16 +1042,16 @@ print("ise $ise");
   }
 
   void openBottomSheet() {
-    showMaterialModalBottomSheet(
+ /*   showMaterialModalBottomSheet(
         context: context,
         builder: (context) {
           return StatefulBuilder(
-              builder: (BuildContext context, StateSetter setState /*You can rename this!*/) {
+              builder: (BuildContext context, StateSetter setState *//*You can rename this!*//*) {
                 return EnviarArquivo(widget.af);
               }
           );
         }
-    );
+    );*/
   }
 
 

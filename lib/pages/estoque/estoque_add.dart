@@ -317,7 +317,7 @@ class _EstoqueAddState extends State<EstoqueAdd> {
                     child: DropdownSearch<String>(
                         showSearchBox: true,
                         mode: Mode.BOTTOM_SHEET,
-                        showSelectedItem: true,
+                      //  showSelectedItem: true,
                         items: mapProduto.keys.toList(),
                         label: "Produto",
                         onChanged: (String data) {
@@ -337,7 +337,7 @@ class _EstoqueAddState extends State<EstoqueAdd> {
                     padding: const EdgeInsets.all(10),
                     child: DropdownSearch<String>(
                         mode: Mode.MENU,
-                        showSelectedItem: true,
+                       // showSelectedItem: true,
                         items: mapCategoria.keys.toList(),
                         label: "Categoria",
                         onChanged: (String data) {
@@ -355,7 +355,7 @@ class _EstoqueAddState extends State<EstoqueAdd> {
                     padding: const EdgeInsets.all(10),
                     child: DropdownSearch<String>(
                         mode: Mode.MENU,
-                        showSelectedItem: true,
+                      //  showSelectedItem: true,
                         items: mapFornecedor.keys.toList(),
                         label: "Fornecedor",
                         onChanged: (String data) {

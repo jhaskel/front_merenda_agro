@@ -148,7 +148,7 @@ class _OrdemFornecedorState extends State<OrdemFornecedor> {
           print("iniciando 02");
           listEntrega = blocEntrega.lista;
           step=listEntrega.length;
-          print(listEntrega);
+          print("LKV ${listEntrega.toString()}");
           print("iniciando 02 $dias");
           return Scaffold(
             body: BreadCrumb(
@@ -476,7 +476,10 @@ class _OrdemFornecedorState extends State<OrdemFornecedor> {
         color: AppColors.button,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22.0)),
         onPressed: () {
-          _onClickImprimir();
+          setState(() {
+            _onClickImprimir();
+          });
+
         }
 
     );
@@ -484,10 +487,16 @@ class _OrdemFornecedorState extends State<OrdemFornecedor> {
 
 
   _onClickImprimir() async {
-    var days = listEntrega.map((e) => e.dia).toSet().toList();
-    for (var x in days){
-      dias.add(x);
-    }
+    dias.clear();
+    var days = await listEntrega.map((e) => e.dia).toSet().toList();
+    print("haskel $days");
+
+  for (var x in days){
+    dias.add(x);
+  }
+
+
+
     print("dias $dias");
     await PagesModel.get(context)
         .push(PageInfo("Imprimir", AfPdfEscola(listEntrega, widget.nomeFor,dias,widget.af)));
@@ -508,6 +517,7 @@ class _OrdemFornecedorState extends State<OrdemFornecedor> {
     setState(() {
       _showProgress  = false;
     });
+
 
   }
 
@@ -544,8 +554,8 @@ class _OrdemFornecedorState extends State<OrdemFornecedor> {
                                 date = await showDatePicker(
                                     context: context,
                                     initialDate: DateTime.now(),
-                                    firstDate: DateTime(2021),
-                                    lastDate: DateTime(2023));
+                                    firstDate: DateTime(2022),
+                                    lastDate: DateTime(2025));
                                 datax = date.toIso8601String();
                                 diaa.text = ('${date.day.toString()}/${date.month.toString()}');
                                 setState(() {

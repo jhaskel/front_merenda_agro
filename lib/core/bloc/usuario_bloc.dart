@@ -22,6 +22,7 @@ class UsuarioBloc extends ChangeNotifier {
         List<Usuario> dados = await UsuariosApi.get(context);
         _streamController.add(dados);
         _lista.clear();
+
         addAll(dados);
         return dados;
 

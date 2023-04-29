@@ -146,6 +146,8 @@ class _PedidoDetalheState extends State<PedidoDetalhe> {
 
   @override
   Widget build(BuildContext context) {
+    print("is loading = ${_isLoading}");
+    print("widget.pedido.isaf = ${widget.pedido.isaf}");
 
     return Scaffold(
       body: _body(),
@@ -155,19 +157,24 @@ class _PedidoDetalheState extends State<PedidoDetalhe> {
                   width: MediaQuery.of(context).size.width,
                   child: !user.isUnidade()
                       ?MaterialButton(
+
                       color: Colors.lightBlue,
                       onPressed: () {
-                        _geraAf();
+                        if(!_isLoading){
+                          _geraAf();
+                        }
+                       
                       },
+
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
+                            !_isLoading ?Text(
                               'Gerar Ordem',
                               style: AppTextStyles.titleBold,
-                            ),
+                            ):Text("Aguarde"),
                             SizedBox(
                               width: 20,
                             ),
@@ -199,7 +206,7 @@ class _PedidoDetalheState extends State<PedidoDetalhe> {
              ,
                 )
               : Container(child: MaterialButton(
-              color: Colors.lightBlue,
+              color: Colors.red,
               onPressed: () {
 
               },
@@ -515,7 +522,7 @@ class _PedidoDetalheState extends State<PedidoDetalhe> {
     var itee = pedidoAdd ?? PedidoAdd();
     itee.total = totalPedido;
     itee.ischeck = false;
-    await PedidoAddApi.save(context, itee);
+     PedidoAddApi.save(context, itee);
   }
 
   decrement(Compras c) async {
@@ -528,19 +535,23 @@ class _PedidoDetalheState extends State<PedidoDetalhe> {
       var itee = pedidoAdd ?? PedidoAdd();
       itee.total = totalPedido;
       itee.ischeck = false;
-      await PedidoAddApi.save(context, itee);
+       PedidoAddApi.save(context, itee);
     }
   }
 
   alteraQuantidade(Compras c, double quant, double valor, bool inc) async {
+    setState(() {
+      _isLoading = true;
+      print("novoIsloading ${_isLoading}");
+    });
     var hoje = DateTime.now().toIso8601String();
     var itee = c ?? Compras();
     itee.id = c.id;
     itee.quantidade = quant;
     itee.total = inc ? c.total + valor : c.total - valor;
-    await ComprasApi.save(context, itee);
+     ComprasApi.save(context, itee);
 
-    await iniciaBloc();
+    //await iniciaBloc();
 
     var ped = pedidoAdd ?? PedidoAdd();
     ped.id = pedidoAdd.id;
@@ -548,6 +559,9 @@ class _PedidoDetalheState extends State<PedidoDetalhe> {
     ped.modifiedAt = hoje;
     itee.ischeck = false;
     await PedidoAddApi.save(context, ped);
+     setState(() {
+       _isLoading = false;
+     });
   }
 
 

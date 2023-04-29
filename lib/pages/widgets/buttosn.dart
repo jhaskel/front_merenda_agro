@@ -43,7 +43,7 @@ class _ButtonRaisedState extends State<ButtonRaised> {
 
                         Padding(
                           padding: const EdgeInsets.only(right: 8.0),
-                          child: RaisedButton(
+                          child: MaterialButton(
                             child: Text("Raised Button"),
                             onPressed: () {},
                           ),
@@ -56,7 +56,7 @@ class _ButtonRaisedState extends State<ButtonRaised> {
 
                         Padding(
                           padding: const EdgeInsets.only(left: 8.0),
-                          child: RaisedButton(
+                          child: MaterialButton(
                             child: Text("Disable Raised Button"),
                             onPressed: null,
                           ),
@@ -77,7 +77,7 @@ class _ButtonRaisedState extends State<ButtonRaised> {
 
                         Padding(
                           padding: const EdgeInsets.only(right: 8.0),
-                          child: RaisedButton(
+                          child: MaterialButton(
                             child: Text("Under Line "),
                             shape: UnderlineInputBorder(),
                             onPressed: () {},
@@ -91,7 +91,7 @@ class _ButtonRaisedState extends State<ButtonRaised> {
 
                         Padding(
                           padding: const EdgeInsets.only(left: 8.0),
-                          child: RaisedButton(
+                          child: MaterialButton(
                             child: Text("Out Line"),
                             shape: OutlineInputBorder(),
                             onPressed: () {},
@@ -110,7 +110,7 @@ class _ButtonRaisedState extends State<ButtonRaised> {
 
                         Padding(
                           padding: const EdgeInsets.only(right: 8.0),
-                          child: RaisedButton(
+                          child: MaterialButton(
                             child: Text(
                               "Shaped Rectengle Border",
                               style: TextStyle(color: Colors.deepOrangeAccent),
@@ -127,7 +127,7 @@ class _ButtonRaisedState extends State<ButtonRaised> {
 
                         Padding(
                           padding: const EdgeInsets.only(left: 8.0),
-                          child: RaisedButton(
+                          child: MaterialButton(
                             child: Text("Shaped Rounded Border"),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30.0),
@@ -151,7 +151,7 @@ class _ButtonRaisedState extends State<ButtonRaised> {
 
                         Padding(
                           padding: const EdgeInsets.only(right: 8.0),
-                          child: RaisedButton(
+                          child: MaterialButton(
                             child: Text(
                               "Shaped Rectengle fill color",
                               style: TextStyle(color: Colors.white),
@@ -168,7 +168,7 @@ class _ButtonRaisedState extends State<ButtonRaised> {
 
                         Padding(
                           padding: const EdgeInsets.only(left: 8.0),
-                          child: RaisedButton(
+                          child: MaterialButton(
                             child: Text("Shaped Rectengle Rounded fill color",
                                 style: TextStyle(color: Colors.white)),
                             color: Colors.teal,
@@ -193,15 +193,26 @@ class _ButtonRaisedState extends State<ButtonRaised> {
 
                         Padding(
                           padding: const EdgeInsets.only(right: 8.0),
-                          child: RaisedButton.icon(
-                            icon: Icon(Icons.ac_unit,
-                                color: Colors.white,
-                                textDirection: TextDirection.ltr),
-                            label: Text(
-                              "Icon Button",
-                              style: TextStyle(color: Colors.white),
-                            ),
+                          child: MaterialButton(
                             color: Colors.deepPurple,
+                            child: Row(
+                              children: [
+                                Icon(Icons.ac_unit,
+                                    color: Colors.white,
+                                    textDirection: TextDirection.ltr),
+                                SizedBox(width: 5,),
+                                Text(
+                                  "Icon Button",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+
+                              ],
+                            ),
+
+
+
+
+
                             onPressed: () {},
                           ),
                         ),
@@ -213,11 +224,20 @@ class _ButtonRaisedState extends State<ButtonRaised> {
 
                         Padding(
                           padding: const EdgeInsets.only(left: 8.0),
-                          child: RaisedButton.icon(
-                            label: Text("Disabled Icon Button",
-                                style: TextStyle(color: Colors.white)),
+                          child: MaterialButton(
+                            child: Row(
+                              children: [
+                                Icon(Icons.ac_unit, color: Colors.white),
+                                SizedBox(width: 5,),
+                                Text("Disabled Icon Button",
+                                    style: TextStyle(color: Colors.white)),
+
+
+                              ],
+                            ),
+
                             color: Colors.amber,
-                            icon: Icon(Icons.ac_unit, color: Colors.white),
+
                             onPressed: null,
                           ),
                         ),
@@ -230,7 +250,7 @@ class _ButtonRaisedState extends State<ButtonRaised> {
                     //====================
                     Padding(
                       padding: const EdgeInsets.only(top: 8.0),
-                      child: RaisedButton(
+                      child: MaterialButton(
                         child: Text("Shaped Rounded Gradient"),
                         shape: BorderDirectional(
                             bottom: BorderSide(

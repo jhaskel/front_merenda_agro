@@ -58,6 +58,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => AppModel(),
         ),
+
         ChangeNotifierProvider(
           create: (context) => PagesModel(),
         )

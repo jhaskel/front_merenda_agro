@@ -1,5 +1,5 @@
 import 'dart:html';
-import 'package:appbar_textfield/appbar_textfield.dart';
+
 import 'package:flutter/material.dart';
 import 'package:merenda_escolar/app_model.dart';
 import 'package:merenda_escolar/pages/login/usuario.dart';
@@ -110,7 +110,7 @@ class _ProdutoMaisPedidoState extends State<ProdutoMaisPedido> {
                             fontWeight: FontWeight.bold, fontSize: 18),
                       )),
                 ),
-                AppBarTextField(
+                /*AppBarTextField(
                   backgroundColor: Colors.transparent,
                   title: Text("Buscar...."),
                   onBackPressed: _onRestoreAllData,
@@ -119,7 +119,7 @@ class _ProdutoMaisPedidoState extends State<ProdutoMaisPedido> {
                   autofocus: true,
                   elevation: 1,
                   clearBtnIcon: Icon(Icons.clear,color: Colors.black87,),
-                ),
+                ),*/
                 SizedBox(height: 5,),
                 Container(
                   color: Colors.black12,

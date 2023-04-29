@@ -1,4 +1,4 @@
-const String BASE_URL = 'https://mere-agro.herokuapp.com/api/v1';
+const String BASE_URL = 'https://merenda-agro.herokuapp.com/api/v1';
 //const String BASE_URL = 'https://merenda-agrolandia.herokuapp.com/api/v1';
 //const String BASE_URL2 = 'https://merenda-agrolandia.herokuapp.com/api/v2';
 //const String BASE_URL = 'http://localhost:8080/api/v1';

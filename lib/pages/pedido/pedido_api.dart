@@ -25,6 +25,8 @@ class PedidoApi {
   }
 
 
+
+
   static Future<List<Pedido>> getByEscola(context,int escola) async {
     String url = "$BASE_URL/pedidos/escola/$escola";
     print("GET2 > $url");
@@ -42,6 +44,7 @@ class PedidoApi {
     print("jsonfaavo${json}");
     return favoritos;
   }
+
   static Future<List<Pedido>> getByCode(context,String code) async {
     String url = "$BASE_URL/pedidos/code/$code";
     print("GET2 > $url");
@@ -59,6 +62,7 @@ class PedidoApi {
     print("jsonfaavo${json}");
     return favoritos;
   }
+
   static Future<List<Pedido>> getByCheck(context,bool ischeck) async {
     String url = "$BASE_URL/pedidos/check/$ischeck";
     print("GET2 > $url");
@@ -93,6 +97,8 @@ class PedidoApi {
     print("jsonfaavo${json}");
     return favoritos;
   }
+
+
   static Future<ApiResponse<bool>> save(context, Pedido c) async {
     try {
       var url = "$BASE_URL/pedidos";
